@@ -1,0 +1,660 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"h",
+				"height"
+			],
+			[
+				"c",
+				"canvas"
+			],
+			[
+				"ca",
+				"canvas	Tag"
+			],
+			[
+				"pa",
+				"param"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"t",
+				"table	Tag"
+			],
+			[
+				"JS",
+				"json_encode"
+			],
+			[
+				"mik",
+				"mikesprite"
+			],
+			[
+				"mi",
+				"mikesprite"
+			],
+			[
+				"pHA",
+				"Phaser"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"char",
+				"CharAt"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"co",
+				"counter"
+			],
+			[
+				"da",
+				"Date"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"r",
+				"rotation"
+			],
+			[
+				"talkt",
+				"talktype"
+			],
+			[
+				"tex",
+				"textarea"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"webkit",
+				"webkit-perspective"
+			],
+			[
+				"onke",
+				"onkeyup	Attr"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"ro",
+				"rotateX"
+			],
+			[
+				"rotate",
+				"rotateY"
+			],
+			[
+				"rota",
+				"rotateX"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"s",
+				"sourcecode"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"src",
+				"script	Tag"
+			],
+			[
+				"mysql_s",
+				"mysql_select_db"
+			],
+			[
+				"my",
+				"mysql_connect"
+			],
+			[
+				"dat",
+				"database"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"S",
+				"StringItem"
+			],
+			[
+				"Da",
+				"Datagram"
+			],
+			[
+				"Dat",
+				"DatagramConnection"
+			],
+			[
+				"C",
+				"Command"
+			],
+			[
+				"v",
+				"void"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"for",
+				"form2"
+			],
+			[
+				"form",
+				"form2"
+			],
+			[
+				"im",
+				"imt	import junit.framework.TestCase;"
+			],
+			[
+				"l",
+				"lights"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"g",
+				"getElementsByTagName"
+			],
+			[
+				"csv",
+				"csvData"
+			],
+			[
+				"cs",
+				"csvData"
+			],
+			[
+				"vel",
+				"velx"
+			],
+			[
+				"ti",
+				"Ticker"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"o",
+				"onload	Attr"
+			],
+			[
+				"log",
+				"longitude"
+			],
+			[
+				"fge",
+				"fgets"
+			],
+			[
+				"mysql_e",
+				"mysql_error"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"mysql_n",
+				"mysql_num_rows"
+			],
+			[
+				"mysql_fetch_",
+				"mysql_fetch_assoc"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/usr/share/applications/defaults.list",
+		"/usr/share/applications/sublime.desktop",
+		"/var/www/project/three/requests.php",
+		"/var/www/project/three/main.js",
+		"/var/www/project/three/jquery.js",
+		"/home/prasad/Desktop/random.html",
+		"/var/www/project/three/main.php",
+		"/var/www/project/three/index2.php",
+		"/var/www/project/three/index1.html",
+		"/var/www/project/time.php",
+		"/var/www/project/old/login.php",
+		"/var/www/project/mydash.php",
+		"/var/www/project/fullview.php",
+		"/media/prasad/New Volume/html5 templates/new framework/Flat-UI-master/index.html",
+		"/media/prasad/New Volume/html5 templates/new framework/Flat-UI-master/untitled.html",
+		"/home/prasad/Desktop/erros.txt",
+		"/var/www/atm/up.php",
+		"/var/www/ramblers/temp.html",
+		"/home/prasad/Desktop/3d.html",
+		"/home/prasad/Desktop/threejs.html",
+		"/var/www/game/index.html",
+		"/var/www/ramblers/assets/bootstrap.min.css",
+		"/var/www/final/webservices.html",
+		"/var/www/ramblers/assets/cover.css",
+		"/var/www/ramblers/assets/docs.min.js",
+		"/home/prasad/Desktop/Datagram.java",
+		"/home/prasad/Desktop/inputchecking.java",
+		"/home/prasad/Desktop/test.html",
+		"/home/prasad/Desktop/loginhttp.java",
+		"/media/prasad/New Volume/projects/sk group/index.html",
+		"/home/prasad/Desktop/sk group/Carousel Template for Bootstrap.html",
+		"/home/prasad/Desktop/sk group/Carousel Template for Bootstrap_files/docs.min.js",
+		"/media/prasad/New Volume/facebook/html/messages.htm",
+		"/home/prasad/Desktop/sk group/Carousel Template for Bootstrap_files/bootstrap.min.js",
+		"/var/www/final/index.php",
+		"/var/www/exceler/index.html",
+		"/home/prasad/Desktop/details.sql",
+		"/media/prasad/New Volume/projects/lightemall/jigsaw.html",
+		"/media/prasad/New Volume/projects/lightemall/main.html",
+		"/home/prasad/Desktop/SOME.html",
+		"/var/www/atm/verbal.php",
+		"/var/www/SOME.html",
+		"/var/www/projectx/admin.php",
+		"/var/www/projectx/upload.php",
+		"/var/www/atm/admin.php",
+		"/var/www/projectx/fullview.php",
+		"/var/www/final/profile.php",
+		"/var/www/mess.php",
+		"/var/www/sms/index.php",
+		"/home/prasad/Desktop/sample.html",
+		"/var/www/sample.html",
+		"/var/www/sms/send.php",
+		"/var/www/projectx/config.php",
+		"/var/www/projectx/index.php",
+		"/var/www/final/info.php",
+		"/var/www/projectx/admin.html",
+		"/var/www/atm/index.php",
+		"/var/www/atm/instruction.php",
+		"/var/www/atm/quants.php",
+		"/var/www/atm/logical.php",
+		"/var/www/atm/technical.php",
+		"/var/www/atm/exam.php",
+		"/home/prasad/Desktop/tp.html",
+		"/var/www/atm/logcheck.php",
+		"/var/www/final/logcheck.php",
+		"/var/www/atm/finish.html",
+		"/var/www/atm/logout.php",
+		"/var/www/atm/login.php",
+		"/var/www/webume/docs/fcreate.php",
+		"/var/www/atm/resdown.php",
+		"/var/www/atm/result.php",
+		"/media/prasad/New Volume/lightemall/jigsaw.html",
+		"/var/www/atm/verbal.html",
+		"/var/www/atm/questions.html~",
+		"/var/www/webume/view.php",
+		"/var/www/webume/index.php",
+		"/var/www/final/skill.php",
+		"/var/www/final/search.php",
+		"/var/www/webume/info.php",
+		"/var/www/final/text.html",
+		"/var/www/webume/search.php",
+		"/var/www/final/logout.php",
+		"/var/www/webume/Jumbotron Template for Bootstrap.html",
+		"/media/prasad/New Volume/html5 templates/bootstrap/offcanvas/Off Canvas Template for Bootstrap.html",
+		"/media/prasad/New Volume/html5 templates/bootstrap/offcanvas/Off Canvas Template for Bootstrap_files/bootstrap.min.css",
+		"/media/prasad/New Volume/html5 templates/bootstrap/offcanvas/Off Canvas Template for Bootstrap_files/scorlling-nav.js",
+		"/var/www/final/assets/offcanvas.css",
+		"/var/www/final/config.php",
+		"/media/prasad/New Volume/html5 templates/bootstrap/offcanvas/Off Canvas Template for Bootstrap_files/easing.js",
+		"/media/prasad/New Volume/html5 templates/bootstrap/css/bootstrap.css",
+		"/var/www/webume/now.html",
+		"/var/www/webume/Jumbotron Template for Bootstrap_files/offcanvas.js",
+		"/var/www/webume/Jumbotron Template for Bootstrap_files/offcanvas.css",
+		"/media/prasad/New Volume/html5 templates/bootstrap/webume.html",
+		"/media/prasad/New Volume/html5 templates/Jumbotron Template for Bootstrap.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sublime_text",
+			"sublime.desktop",
+			"gedit.desktop",
+			"reply",
+			"cid=$cid",
+			"WHERE",
+			" <a href=\"fullview.php?id=2\" class=\"btn btn-success\">View Details</a>",
+			"'",
+			"]",
+			"$res",
+			",",
+			"COUNT(*)",
+			" or die(mysql_error())",
+			"mysql_query(",
+			"fullviw",
+			"-danger",
+			"body{",
+			"-primary",
+			"rows",
+			"weekday='WED'",
+			"thidhi='Suddha Shashti'",
+			"pstart='M'",
+			"padam=1",
+			"Jyeshta",
+			" <div class=\"c100 p55\">\n                                <span>25%</span>\n                                 <div class=\"slice\">\n                                 <div class=\"bar\"></div>\n                                 <div class=\"fill\"></div>\n                                </div>\n                                 </div>",
+			"AND",
+			",",
+			"03-Oct-18",
+			"assets",
+			"<div ",
+			"+",
+			"assets",
+			"md-3",
+			"<a class=\"btn btn-primary\" href=\"#\">Like</a>",
+			"<b>like</b>",
+			"200px",
+			"360px",
+			"container",
+			"margin",
+			"400",
+			"prespective",
+			"foot",
+			"ram",
+			"buss",
+			"Pricing is fixed according to our",
+			"body",
+			"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzPjwvZGVmcz48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI0VFRUVFRSI+PC9yZWN0PjxnPjx0ZXh0IHg9IjE5MC41IiB5PSIyNTAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MjNwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj41MDB4NTAwPC90ZXh0PjwvZz48L3N2Zz4=",
+			"ajax",
+			"./Carousel Template for Bootstrap_files/",
+			"navyasree",
+			"navya",
+			"notify",
+			"btn-primary",
+			"assets",
+			"okCommand",
+			"comapany",
+			"fun",
+			"pane",
+			"0A",
+			"file",
+			"   \n",
+			"5",
+			"action",
+			"o",
+			"<form",
+			"verbal",
+			"content",
+			"instructions",
+			"quants",
+			"verbal",
+			"countdown()",
+			"body",
+			"assets",
+			".\"~\".",
+			".\",\".",
+			"spli",
+			".\",\".",
+			"first",
+			"first name",
+			"address",
+			"perce ",
+			"percent",
+			"email",
+			"border-bottom",
+			".skills",
+			"myfont",
+			"webume",
+			"location",
+			"<div style='background:white;padding:10px;' class='row'>",
+			"view.php?pageinfo=518d54c9d6fb5ac5def0af19511ab0d1&uid=$res1[userid]",
+			"$certificates",
+			"contact",
+			"$res",
+			"userpics",
+			"./Off Canvas Template for Bootstrap_files",
+			"fixed",
+			"orange",
+			"success"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sublime",
+			"View",
+			"cid='$cid'",
+			"WHERE cid=$cid AND",
+			"WHERE cid=$cid",
+			" <a href=\"fullview.php?id=2\" class=\"btn btn-success\" target=\"_blank\">View Details</a>",
+			"",
+			"]</td>",
+			"<td>$res",
+			"$res['",
+			"*",
+			"",
+			"fullview",
+			"-success",
+			"row",
+			"weekday='$row[5]'",
+			"thidhi='$rows[4]'",
+			"pstart='$rows[3]'",
+			"padam=$row[2]",
+			"$row[1]",
+			" <div class=\"c100 p0 green\">\n                                <span>0%</span>\n                                 <div class=\"slice\">\n                                 <div class=\"bar\"></div>\n                                 <div class=\"fill\"></div>\n                                </div>\n                                 </div>",
+			" AND ",
+			"AND",
+			"../ramblers/",
+			"<div class=\"wall\"",
+			".",
+			"./ramblers/",
+			"md-4",
+			"<a class=\"btn btn-primary\" href=\"#\">Like</a> <a class=\"btn btn-danger\" href=\"#\">Comment</a>",
+			"<a class=\"btn btn-primary\" href=\"#\">Like</a>",
+			"150px",
+			"260px",
+			"container1",
+			"Pricing is fixed based on our",
+			"assets/sample.jpg",
+			"assets/",
+			"btn-success",
+			"webume/final/assets",
+			"sendCommand",
+			"2C",
+			"technical",
+			"logical",
+			"quants",
+			"instruction",
+			"technical",
+			"logical",
+			"quants",
+			"css",
+			".\"@#$\".",
+			".\"~\".",
+			".\"@#$\".",
+			"<div style='border-bottom:2px solid rgba(0,0,0,0.6);background:white;padding:10px;' class='row'>",
+			"profile.php?pid=$res1[userid]",
+			"$personal",
+			"assets",
+			"#428bca"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

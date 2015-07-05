@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/offcanvas/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <title>Exceller</title>
+<link rel="icon" href="logo.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<style type="text/css">
+.panel
+{
+  border-radius: 0px;
+}
+.panel-primary .panel-heading
+{
+  border-radius: 0px;
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+.panel-primary
+{
+  border-color: #e74c3c;
+}
+textarea
+{
+  border-radius: 10px;
+  border-color: #4aa3df;
+}
+</style>
+	<script src ="js/script.js"></script>
+</head>
+<BODY style="background:#ecf0f1;">
+ <div class="navbar navbar-default navbar-static-top" style="height:80px;margin-bottom:0px;background:#2c3e50;border-color:#2c3e50;" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          
+          
+          <a class="navbar-brand" style="color:white;"href="index.php"><b class="logo"><img src="logo.png" height="60px" width="60px">eller</b></a>
+        </div>
+        
+      </div>
+    </div><br>
+<div class="container">
+
+<div class="panel panel-primary">
+<div class="panel-heading"><b>Insert code here</b></div>
+    <div class="row">
+    <div class="col-md-12">
+    <br>
+    <center>
+    <label for="fn">Output File name</label>
+    <input type="text" name="fn" id="fname" placeholder="File name"><br>
+    </center>
+    <br><center>
+<textarea id="source"  style="width:80%;height:400px;"></textarea></center>
+</div>
+</div>
+<br>
+<center>
+<a onclick="csvdone();"  class="btn btn-success" id="down" href="#">Download</a><br><br>
+</center>
+<div class="panel-footer"> <center>  <p>Designed by <a href="#" download="MyFile.csv">Ramblers solutions</a> &copy; </p>
+      </center></div>
+</div>
+<div  style="display:none;" id="data"></div>
+</div> 	
+
+</div>
+
+</BODY>
+</HTML>

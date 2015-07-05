@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Game</title>
+
+</head>
+<body>
+<style>
+body
+{
+background:black;
+}
+.box
+{
+width:5%;
+height:10%;
+background:white;
+float:left;
+margin:5px;
+position:relative;
+left:35%;
+}
+.row
+{
+
+left:35%;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script>
+
+function change(item)
+{
+setInterval(function()
+{
+
+	
+	var x = document.getElementByClass("row");
+	
+	x.style.left= "40%";
+	
+},1000);
+
+}
+</script>
+<center>
+<div class="row">
+<div id = "1" onclick="change(this);" class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div></div><br><br><br><br><br>
+<div class="row"><div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div></div><br><br><br><br><br>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div></div><br><br><br><br><br>
+<div class="row"><div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div></div><br><br><br><br><br>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div></div><br><br><br><br><br>
+
+</center>
+</body>
+</htm>

@@ -1,0 +1,40 @@
+::selection
+{
+	background: #e74c3c;
+	color:white;
+}
+
+.jumbotron
+{
+	text-align: center;
+	border:1px solid #e74c3c;
+}
+.jumbotron hr
+{
+	border-color: #e74c3c;
+}
+.panel p
+{
+	padding:5px;
+}
+.navbar-inverse
+{
+	background: #e74c3c;
+	border: none;
+	height:70px;
+}
+.progress-bar
+{
+
+	background: #2ecc71;
+	height:20px;
+	position: absolute;
+	margin: 0px;
+	top:20%;
+	text-align: center;
+	color:black;
+	font-weight: bold;
+	border-radius: 10px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}

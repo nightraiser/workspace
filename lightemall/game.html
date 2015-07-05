@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light'em all</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+	@font-face {
+    font-family: mainfont;
+    src: url(circula-medium.otf);
+}
+	body
+	{
+		background: #2c3e50;
+		font-family: mainfont;
+	}
+	td
+	{
+		background: white;
+		border:5px solid #2c3e50;
+		
+	}
+	table
+	{
+		background: #2c3e50;
+	}
+	.yellow
+	{
+		color: yellow;
+
+	}
+	
+	.panel-danger>.panel-heading
+	{
+		background: #f1c40f;
+		color: black;
+		border-color: #f1c40f;
+		font-weight: bold;
+	}
+	.panel-success>.panel-heading
+	{
+		background: #27ae60;
+		color: white;
+		font-weight: bold;
+		border-color: #27ae60;
+	}
+	</style>
+
+<script type="text/javascript">
+var clicks = 0;
+var my_media=null;
+columns1 = new Array(5);      
+columns2 = new Array(5);   
+columns3 = new Array(5);
+columns4 = new Array(5);
+columns5 = new Array(5);
+
+rows = new Array(5);
+rows[0] = columns1;
+rows[1] = columns2;
+rows[2] = columns3;
+rows[3] = columns4;
+rows[4] = columns5;
+for(var i=0;i<5;i++)
+{
+	for(var j=0;j<5;j++)
+	{
+		rows[i][j]=0;
+	}
+}
+//document.addEventListener("onload	",deviceReady,false);
+window.onload=function () 
+{
+	
+	var table = document.getElementById("main");
+	table.style.marginTop=window.innerHeight/35+"px";
+	for (var i = 0;i<5;i++) 
+	{
+		var row = table.insertRow(i);
+		for(var j=0;j<5;j++)
+		{
+			var cell = row.insertCell(j);
+			cell.id=i+""+j;
+			cell.setAttribute("onclick","check(this)");
+			cell.style.height=window.innerHeight/6+"px";
+			cell.style.width=window.innerWidth/5+"px";
+
+		}
+	};
+}
+
+
+function check(cell) 
+{
+	var src="button-3.mp3";
+	clicks++;
+	 // my_media = new Media(src, onSuccess, onError);
+	 // my_media.play();
+
+	document.getElementById("num").innerHTML=clicks;
+	var r = parseInt(cell.id.charAt(0));
+	var c = parseInt(cell.id.charAt(1));
+	var current = plot(r,c);
+	cell.style.background=current;
+	if(current=="yellow")
+	{
+	cell.innerHTML='<center><img src="light-bulb-7.svg" height='+window.innerHeight/10+'px height='+window.innerWidth/8+'px></center>';
+	}
+	else
+	{
+		cell.innerHTML="";	
+	}
+
+		if((c+1)<5)
+		{
+			var str = r.toString()+""+(c+1).toString();
+			
+			var d = document.getElementById(str);
+
+            	var color = plot(r,c+1);
+			d.style.background=color;
+			if(color=="yellow")
+				{
+				d.innerHTML='<center><img src="light-bulb-7.svg" height='+window.innerHeight/10+'px height='+window.innerWidth/8+'px></center>';
+				}
+				else
+				{
+					d.innerHTML="";
+				}
+
+
+
+		}
+		if((c-1)>=0)
+		{
+			var str = r.toString()+""+(c-1).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r,c-1);
+			d.style.background=color;
+			if(color=="yellow")
+				{
+				d.innerHTML='<center><img src="http://simpleicon.com/wp-content/uploads/light-bulb-7.svg" height='+window.innerHeight/10+'px height='+window.innerWidth/8+'px></center>';
+				}
+				else
+				{
+					d.innerHTML="";
+				}
+
+		}
+		/////////roow
+		if((r+1)<5)
+		{
+			var str = (r+1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color  = plot(r+1,c);
+			d.style.background=color;
+			if(color=="yellow")
+				{
+				d.innerHTML='<center><img src="http://simpleicon.com/wp-content/uploads/light-bulb-7.svg" height='+window.innerHeight/10+'px height='+window.innerWidth/8+'px></center>';
+				}
+				else
+				{
+		d.innerHTML="";
+				}
+
+		}
+		if((r-1)>=0)
+		{
+			var str = (r-1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r-1,c);
+			d.style.background=color;
+			if(color=="yellow")
+				{
+				d.innerHTML='<center><img src="http://simpleicon.com/wp-content/uploads/light-bulb-7.svg" height='+window.innerHeight/10+'px height='+window.innerWidth/8+'px></center>';
+				}
+				else
+				{
+					d.innerHTML="";
+				}
+
+		}
+
+
+}
+
+function plot(x,y)
+{
+
+
+		if(rows[x][y]==0)
+	{
+		rows[x][y]=1;
+		
+				return "yellow";
+			
+	}
+	else
+	{
+		rows[x][y]=0;
+		return "white";
+	}
+
+
+	
+
+
+}
+function restart()
+{
+	location.reload();
+}
+</script>
+</head>
+<body>
+ 	
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header" >
+       
+          
+          <a class="navbar-brand" href="index.php"><b class="logo">Light'em all</b></a>
+          <a style="margin-top:10px; margin-right:5px;" onclick="restart();" class="pull-right btn btn-success" >Restart</a>
+          <a style="margin-top:10px; margin-right:5px;" class="pull-right btn btn-primary" href="#">Clicks <span id="num">0</span></a>
+        </div>
+       
+      </div>
+    </div>
+    
+<div class="row">
+<div class="col-md-12">
+<table id="main">
+	
+</table>
+
+</div>
+</div><br><br>
+
+</div>
+</body>
+</html>

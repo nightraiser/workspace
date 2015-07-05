@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat app</title>
+	<style type="text/css">
+	#messages
+	{
+		border: 1px solid black;
+		width:500px;
+		height: 500px;
+		margin: 10px;
+		padding: 5px;
+		overflow: auto;
+	}
+
+	</style>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	var hash = 0;
+	$(function()
+	{
+		$("#messages").scrollTop($("#messages").height() );	
+		console.log($("#messages").scrollTop());
+		getMessages();
+		$( "button" ).click(function() 
+		{
+  			var message = $("#message").val();
+  			$.ajax({
+  				url:"server.php",
+  				type:"GET",
+  				data:{message:$("#message").val(),sender:$("#sender").val()},
+  				success:function(response)
+  				{
+  					if(response==true)
+  					{
+  						$("#message").val("");
+  					}
+   				}
+  			});
+
+
+		});
+	});
+	function getMessages()
+	{
+		
+		$.ajax({
+			url:"get.php",
+			type:"GET",
+			success:function(response)
+			{
+				var output="";
+				var data = JSON.parse(response);
+				
+				if(hash!=data.length)
+				{
+					
+				for(var i=hash;i<data.length;i++)
+				{
+					
+					output+=(">> "+data[i]["message"]+" ~"+data[i]["sender"]+"<br>");
+					
+				}
+				hash = data.length;
+					
+				$("#messages").append(output);
+
+				}
+				getMessages();
+			}
+		});
+		//
+
+	}
+	</script>
+</head>
+<body>
+<div id="messages"></div>
+<input type="text" id="sender"><br>
+<textarea id="message" rows="7" cols="75"></textarea>
+<button id="send">Send</button>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image digest</title>
+	<style>
+	table
+	{
+		background: black;
+		padding: 25px;
+
+	}
+	td
+	{
+		width:30px;
+		height:30px;
+		background: white;
+	}
+	</style>
+	<script>
+	var rows=new Array(9);
+	for(var i=0;i<9;i++)
+	{
+		rows[i] = new Array(9);
+	}
+
+
+	function set()
+	{
+		var tab = document.getElementsByTagName("table")[0];
+		var count=0;
+		for(var i=0;i<9;i++)
+		{
+			var row = tab.insertRow(i);
+			for(var j=0;j<9;j++)
+			{
+				var cell = row.insertCell(j);
+				cell.setAttribute("id",i+""+j);
+				count++;
+
+			}
+		}
+	}
+
+	function plot(x,y)
+{
+	if(rows[x][y]==0)
+	{
+		rows[x][y]=1;
+		return "yellow";
+	}
+	else
+	{
+		rows[x][y]=0;
+		return "white";
+	}
+
+
+}	
+
+
+var key1 = 0;
+function hash()
+{
+for(var z=0;z<9;z++)
+{
+	for(var z1=0;z1<9;z1++)
+	{
+		rows[z][z1]=0;
+	}
+}
+key1=0;
+var txt = document.getElementById("data").value.toUpperCase();
+
+for(var i=0;i<txt.length;i++)
+{
+	var n = txt.charCodeAt(i)+key1;
+	key1=(key1+n)%81;
+	console.log("ASCII("+txt.charAt(i)+")="+txt.charCodeAt(i)+" Modulo of 81 will result in "+key1);
+	var r=0;
+	var c =0;
+	if((key1%10)>=9)
+	{
+		if(key1==9)
+		{
+			r=1;
+			c=0;
+		}
+		else{
+			r=(parseInt(key1.toString().charAt(0)))+1;
+		
+		c=0;
+		}
+		
+		
+
+
+	}
+	else
+	{
+		
+		r= key1.toString().charAt(0);
+		c=((key1%10));
+	}
+	//console.log(r+""+c);
+	check(document.getElementById(r+""+c));
+
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+function check(x)
+	{
+
+		var r = parseInt(x.id.charAt(0));
+		var c = parseInt(x.id.charAt(1));
+		var c1 = plot(r,c);
+		x.style.background=c1;
+		if((c+1)<9)
+		{
+			var str = r.toString()+""+(c+1).toString();
+			
+			var d = document.getElementById(str);
+            	var color = plot(r,c+1);
+			d.style.background=color;
+
+
+		}
+		if((c-1)>=0)
+		{
+			var str = r.toString()+""+(c-1).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r,c-1);
+			d.style.background=color;
+
+		}
+		/////////roow
+		if((r+1)<9)
+		{
+			var str = (r+1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color  = plot(r+1,c);
+			d.style.background=color;
+
+		}
+		if((r-1)>=0)
+		{
+			var str = (r-1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r-1,c);
+			d.style.background=color;
+
+		}
+		
+		
+
+	}
+
+
+	</script>
+</head>
+<body onload="set();">
+<center>
+<table>
+	
+
+</table>
+<br>
+<textarea rows ="10" cols="20" id="data">
+	
+</textarea>
+<br>
+<button onclick="hash();">Make digest</button>
+</center>
+</body>
+</html>l

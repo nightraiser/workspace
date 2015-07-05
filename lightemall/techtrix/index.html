@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>TechTrix</title>
+		
+	</head>
+	<body>
+<style>
+.actions
+{
+position:absolute;
+top:30%;
+}
+board
+{
+width:55%;
+height:55%;
+position:absolute;
+left:40%;
+top:15%;
+border-radius:10px;
+border:2px dashed black;
+
+}
+mask1
+{
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5);
+z-index: 100;
+position: absolute;
+left: 0%;
+top:0%;
+
+}
+
+
+mask
+{
+width:100%;
+height:100%;
+position:absolute;
+left:0%;
+top:0%;
+
+}
+mask img
+{
+width:100%;
+height:100%;
+position:absolute;
+left:0%;
+top:0%;
+
+
+}
+mask h1
+{
+z-index:2;
+}
+ball
+{
+width:70px;
+height:75px;
+
+position:absolute;
+left:0%;
+top:85%;
+z-index:2;
+}
+ball img
+{
+width:100%;
+height:100%:
+position:absolute;
+top:0%;
+left:0%;
+
+}
+movs
+{
+background:#1abc9c;
+border-radius:20px;
+padding:5px;
+position:absolute;
+width:30%;
+height:30%;
+top:60%;
+left:5%;
+padding:5px;
+overflow:auto;
+border-top:2px outset rgb(0,0,0);
+border-right:3px outset rgb(0,0,0);
+color:white;
+}
+
+po
+{
+position:absolute;
+left:12%;
+top:12%;
+width:50px;
+height:75px;
+border-radius:2px;
+z-index:1;
+color:white;
+}
+po img
+{
+width:100%;
+height:70%;
+position:absolute;
+left:0%;
+top:0%;
+
+}
+po1
+{
+position:absolute;
+left:48%;
+top:12%;
+width:50px;
+height:75px;
+border-radius:2px;
+z-index:1;
+color:white;
+}
+po1 img
+{
+width:100%;
+height:70%;
+position:absolute;
+left:0%;
+top:0%;
+
+}
+po2
+{
+position:absolute;
+left:84%;
+top:12%;
+width:50px;
+height:75px;
+border-radius:2px;
+z-index:1;
+color:white;
+}
+po2 img
+{
+width:100%;
+height:70%;
+position:absolute;
+left:0%;
+top:0%;
+
+}
+grid
+{
+background:black;
+width:10px;
+height:10px;
+}
+.actions
+{
+background:#e74c3c;
+width:15%;
+height:35%;
+position:absolute;
+top:15%; 
+/*box-shadow: 10px -5px 5px rgb(0, 173, 255);*/
+
+left:10%;
+border-radius:20px;
+border-top:2px outset rgb(0,0,0);
+border-right:3px outset rgb(0,0,0);
+}
+header
+{
+background: rgba(231, 76, 60,1);
+width: 100%;
+height: 10%;
+position: absolute;
+top: 0%;
+left: 0%;
+color: #ecf0f1;
+font-family: Cambria, Georgia, serif;
+font-size: 50px;
+z-index:10;
+
+}
+header1
+{
+background: rgba(231, 76, 60,1);
+width: 100%;
+height: 15%;
+position: absolute;
+top: 0%;
+left: 0%;
+color: #ecf0f1;
+font-family: Cambria, Georgia, serif;
+font-size: 50px;
+z-index:10;
+
+}
+inst
+{
+	background: white;
+	width: 70%;
+	height:80%;
+	position: absolute;
+	top:12%;
+	left:15%;
+	border-radius:10px;
+	padding: 5px;
+}
+
+</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js">
+		
+	</script>
+<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+<mask1 id="instructions">
+
+<inst>
+<header1>
+<center>Tips</center>
+
+</header1>
+<br><br><br><br><br><br><center>
+<p>
+	<b>Use the <button  class="btn btn-info">Navigate</button> to move the angry bird to its enemy pigs,it will in return navigate you to our page</b><br>
+	<b>To navigate to Home page travel to :<img src="Pig_shoked_3.png"  width="75px" height="75px"></b><br>
+	<b>To navigate to Events page travel to :<img src="6143-256x256x32.png"  width="75px" height="75px"></b><br>
+	<b>To navigate to Contact page travel to :<img src="cowboy_stash_pig_by_obcodis-d5i5t6e.png"  width="75px" height="75px"></b>
+	</p>
+
+</center>
+
+
+
+<center>
+<button onclick="rem()"  class="btn btn-success">&#9658; Play</button> <button onclick="rem1()"  class="btn btn-success">Skip</button><br>
+</center>
+</inst>	
+	</mask1>
+
+<header>
+<center><h1>Code your path</h1></center>
+</header>
+
+<mask>
+
+<img src="background3.jpg">
+
+</mask>
+
+		<div class="container">
+		<div  class="actions">
+	<center>
+	<br>
+		<button onclick="pm(this)" id="Move Left" class="btn btn-info">Move Left &#8592;</button><br>
+		<button onclick="pm(this)" id="Move Right" class="btn btn-info">Move Right &#8594;</button><br>
+		<button onclick="pm(this)" id="Move Top" class="btn btn-info">Move Top &#8593;</button><br>
+		<button onclick="pm(this)" id="Move Down" class="btn btn-info">Move Down &#8595;</button><br><br>
+		<button onclick="suc()"  class="btn btn-success">&#9658; Run</button><br>
+</center>
+		</div>
+<board><mask><img src="grid.png"></mask><grid></grid><grid></grid><grid></grid><ball id="ball"><!--a href="http://www.picgifs.com/graphics/"><img src="http://www.picgifs.com/graphics/w/walking/graphics-walking-474002.gif" border="0" /></a--><!--img id="image" src="http://www.benettonplay.com/toys/flipbookdeluxe/flipbooks_gif/2011/07/30/GUEST_9918410236_1311982639.gif"--><img src="angry_birds_flying_animation_by_raineli-d3g3yx7.gif" id="image"></ball><po><img src="Pig_shoked_3.png"></po><po1><img src="6143-256x256x32.png"></po1><po2><img src="cowboy_stash_pig_by_obcodis-d5i5t6e.png"></po2></board>
+<movs id="movs"></movs>
+		</div>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+	var l=0,t=85,chanc=0;
+var mr=new Array();
+var 	i=0;
+		var b = document.getElementById("ball");
+var m = document.getElementById("movs");
+function pm(btn)
+{
+mr[i]=btn.id;
+i++;
+m.innerHTML+="<b>&#8594;"+btn.id+"();</b><br>";
+chanc++;
+}
+function done()
+{
+		if(l==10&&t==15)
+		{
+			window.location="view.html";
+
+		}
+			if(l==45&&t==15)
+		{
+			window.location="view.html#about";
+
+		}
+			if(l==85&&t==15)
+		{
+			window.location="view.html#contact";
+
+		}
+}
+function rem()
+{
+	
+	var f =document.getElementById("instructions");
+	f.style.display="none";
+}
+function rem1()
+{
+	
+	window.location="view.html";
+}
+function suc()
+{
+	var i=0;
+	
+	for(i=0;i<mr.length;i++)
+	{
+	if(mr[i]=="Move Left")
+	{
+	mleft1();
+	}
+	if(mr[i]=="Move Right")
+	{
+	mright1();
+	}
+	if(mr[i]=="Move Top")
+	{
+	mtop1();
+	}
+	if(mr[i]=="Move Down")
+	{
+	mdown1();
+	}
+}
+	
+
+
+
+
+m.innerHTML="";
+for(i=0;i<mr.length;i++)
+{
+mr[i]="";
+
+}
+mr.length=0;
+
+}
+
+	function mright1()
+	{
+		
+		if(l<90)
+		{
+
+		l=l+5;
+	b.style.left=l+"%";
+		}
+		done();
+
+	}
+	function mleft1()
+	{
+		
+		if(l>0)
+		{
+
+		l=l-5;
+	b.style.left=l+"%";
+		}
+		done();
+
+	}
+function mtop1()
+	{
+		
+		if(t>10)
+		{
+
+		t=t-10;
+	b.style.top=t+"%";
+		}
+done();
+
+	}
+function mdown1()
+	{
+		if(t<85)
+		{
+
+		t=t+10;
+	b.style.top=t+"%";
+		}
+done();
+	}
+</script>
+	</body>
+</html>
+
+
+
+
+
+

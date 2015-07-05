@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	
+</head>
+<body>
+<!--
+<table border="1.0">
+	
+</table>-->
+
+
+
+<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+
+
+	var param = getParameters();
+
+	var id = JSON.parse(param).id;
+
+		alert(id);
+		
+
+		
+	$.post(
+				"requests.php",
+				{index:"all"},
+				function(data,status)
+				{
+
+					data=JSON.parse(data);
+					$.each(data,function(i,item)
+						{
+							$("table").append("<tr><td>"+i+"</td><td>"+data[i].aid+"</td><td>"+data[i].dbid+"</td><td><p>"+data[i].message+"</p></td><td>"+data[i].postby+"</td></tr>");
+						});
+					
+
+				}
+
+
+
+
+			); 
+
+			$("body").append("<h1>Heeloo</h1>");        
+
+
+
+
+	});
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/offcanvas/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Verbal|Assesments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../css/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="css/ie-emulation-modes-warning.js"></script>
+   
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .panel p
+    {
+    	padding:5px;
+    	}
+    	</style>
+  </head>
+<body onload="countdown();">
+<!--nabar-->
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          
+          
+          <a class="navbar-brand" href="#"><b class="logo">Asessments|<span id="timer"></span></b></a>
+        </div>
+        
+      </div>
+    </div>
+
+<!--nabar-->
+<br><br>
+<div class="container" id="view">
+</div>
+
+
+
+
+<!--- srcipts -->
+  <script src="js/jquery.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+
+    var score =0;
+    var d;
+    var k
+    $( function()
+    	{
+    		$.post("requests.php",
+    {
+      questions:"verbal"
+     
+    },
+    function(data){
+   d = JSON.parse(data);
+   var res="";
+  for( k in d)
+                  {
+    
+                       res+="<div class='row'><div class='col-md-12'><div id='question"+k+"' class='panel panel-primary'><div class='panel-heading'><b>Question "+k+"</b></div><p><b>"+d[k]['question']+"</b></p><hr><p><input type='radio' onclick='answer(this);' name='"+k+"' value='"+d[k]['op1']+"'>"+d[k]['op1']+"<br> <input type='radio' onclick='answer(this);' name='"+k+"' value='"+d[k]['op2']+"'>"+d[k]['op2']+"<br><input type='radio' onclick='answer(this);' name='"+k+"' value='"+d[k]['op3']+"'>"+d[k]['op3']+"<br><input type='radio' onclick='answer(this);' name='"+k+"' value='"+d[k]['op4']+"'>"+d[k]['op4']+"<br></p></div></div></div></div>"
+                  }
+                   $( "#view" ).html(res);
+                   $("#view").append("<div class='row'><div class='col-md-6 col-md-offset-3'><button onclick='complete();' class='btn btn-lg btn-success pull-center'>Submit</button></div><br><br>")
+
+
+
+    });
+
+
+
+
+
+    	});
+function answer(ans)
+{
+	var answered = document.getElementById("question"+ans.name);
+	answered.setAttribute("class","panel panel-success");
+
+}
+function complete()
+{
+	var r = "";
+	for(var kn = 1;kn<=25;kn++)
+	{
+		var row = document.getElementsByName(kn);
+		for(var i=0;i<4;i++)
+		{
+			if(row[i].checked)
+			{
+				if(row[i].value == d[kn]['ans'])
+				{
+					score++;
+				}
+			}
+		}
+	}
+$.post("requests.php",
+    {
+      score:score
+     
+    },
+    function(data){
+
+window.href.location="paragraph.html";
+
+    });
+	
+}
+
+function countdown()
+{
+var mins=24,sec=60;
+setInterval(function()
+{
+
+if(sec>0)
+{
+sec--;
+
+document.getElementById("timer").innerHTML=mins+":"+sec;
+
+}
+else
+{
+mins--;
+sec=60;
+}
+
+if(mins<0)
+{
+   complete();
+
+}
+}, 1000);
+
+
+
+}
+
+    </script>
+</body>
+</html>

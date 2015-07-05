@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/offcanvas/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Verbal|Assesments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../css/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="css/ie-emulation-modes-warning.js"></script>
+   
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    
+    	</style>
+  </head>
+<body onload="countdown();">
+<!--nabar-->
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          
+          
+          <a class="navbar-brand" href="#"><b class="logo">Asessments|<span id="timer"></span></b></a>
+        </div>
+        
+      </div>
+    </div>
+
+<!--nabar-->
+<br><br><br><be>
+<div class="container" id="view">
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><b>Write a essay on topic <span id="tid"></span></b></div>
+      <br><br>
+      <div style="padding:5px;"><textarea id="para" class="form-control" cols="30" rows="20"></textarea></div>
+      <br><br>
+      <div class="panel-footer">
+        <button class="btn btn-success" onclick="complete();">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!--- srcipts -->
+  <script src="js/jquery.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+var tid =Math.floor((Math.random() * 10) + 1);
+document.getElementById("tid").innerHTML = tid;
+function show()
+{
+  alert($("#para").val());
+}
+  
+function complete()
+{
+	$.post("requests.php",
+    {
+      tid:tid,
+      para:$("#para").val()
+     
+    },
+    function(data){
+
+alert(data);
+//window.location.href="finish.html";
+
+    });
+	
+}
+
+function countdown()
+{
+var mins=24,sec=60;
+setInterval(function()
+{
+
+if(sec>0)
+{
+sec--;
+
+document.getElementById("timer").innerHTML=mins+":"+sec;
+
+}
+else
+{
+mins--;
+sec=60;
+}
+
+if(mins<0)
+{
+   complete();
+
+}
+}, 1000);
+
+
+
+}
+
+    </script>
+</body>
+</html>

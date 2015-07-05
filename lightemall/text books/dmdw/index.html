@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light'em all</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+
+	*
+	{
+		margin: 0px;
+		padding: 0px;
+	}
+	h1
+	{
+		background: yellow;
+		color:black;
+	}
+	h2
+	{
+		background: yellow;
+		color:black;
+	}
+	body,html
+	{
+		background: black;
+	}
+	td
+	{
+		border: 1px solid black;
+	}
+	table 
+	{
+		background: black;
+	}
+	.bulb
+	{
+
+
+	
+		background: white;
+		cursor:pointer;
+	}
+	footer
+	{
+		position: absolute;
+		bottom: 0%;
+		left:30%;
+	}
+	
+	.result
+	{
+		position: absolute;
+		left: 80%;
+		top:10%;
+		color: white;
+		font-size: 25px;
+		z-index: 1;
+	}
+	mask 
+	{
+		position: absolute;
+		left:0%;
+		top:0%;
+		width:100%;
+		height:100%;
+		background: rgba(255,255,255,0.6);
+		z-index: 2;
+		display:none;
+		color: black;
+		font-size: 30px;
+		text-align: center;
+	}
+	mask p
+	{
+		position: absolute;
+		top:30%;
+		left: 30%;
+		font-weight: bold;
+		font-size: 40px;
+	}
+	/*@media screen and (max-width:750px)
+	{
+		.container
+		{
+			width:100%;
+			height:100%;
+			position: absolute;
+			top:0%;
+			left:0%;
+		}
+		h1
+		{
+			display: none;
+		}
+		.result
+		{
+			display: none;
+		}
+		.footer
+		{
+			display: none;
+		}
+
+	}*/
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+var clicks=0;
+
+columns1 = new Array(5);      
+columns2 = new Array(5);   
+columns3 = new Array(5);
+columns4 = new Array(5);
+columns5 = new Array(5);
+
+rows = new Array(5);
+rows[0] = columns1;
+rows[1] = columns2;
+rows[2] = columns3;
+rows[3] = columns4;
+rows[4] = columns5;
+
+for(var z=0;z<5;z++)
+{
+	for(var z1=0;z1<5;z1++)
+	{
+		rows[z][z1]=0;
+	}
+}
+window.onload=function()
+{
+var h = window.innerHeight/7;
+var w = window.innerWidth/5;
+if(w>h)
+{
+	var temp = w;
+	w=h;
+	h=temp;
+
+}
+var bs = document.getElementsByClassName("bulb");
+for (var i = bs.length - 1; i >= 0; i--) 
+{
+	bs[i].style.width=w+"px";
+	bs[i].style.height=h+"px";
+}
+
+
+};
+
+function search () 
+{
+	var count=0;
+	for(var z=0;z<5;z++)
+{
+	for(var z1=0;z1<5;z1++)
+	{
+		if(rows[z][z1]==0)
+		{
+			return false;
+		}
+		else
+		{
+			count++;
+		}
+	}
+}
+if(count==25)
+{
+	clicks=0;
+	return true;
+}
+}
+
+function plot(x,y)
+{
+	if(rows[x][y]==0)
+	{
+		rows[x][y]=1;
+		return "yellow";
+	}
+	else
+	{
+		rows[x][y]=0;
+		return "white";
+	}
+
+
+}	function check(x)
+	{
+		clicks++;
+		document.getElementById("numb").innerHTML=clicks;
+		var r = parseInt(x.id.charAt(0));
+		var c = parseInt(x.id.charAt(1));
+		var c1 = plot(r,c);
+		x.style.background=c1;
+		if((c+1)<5)
+		{
+			var str = r.toString()+""+(c+1).toString();
+			
+			var d = document.getElementById(str);
+            	var color = plot(r,c+1);
+			d.style.background=color;
+
+
+		}
+		if((c-1)>=0)
+		{
+			var str = r.toString()+""+(c-1).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r,c-1);
+			d.style.background=color;
+
+		}
+		/////////roow
+		if((r+1)<5)
+		{
+			var str = (r+1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color  = plot(r+1,c);
+			d.style.background=color;
+
+		}
+		if((r-1)>=0)
+		{
+			var str = (r-1).toString()+""+(c).toString();
+			
+			var d = document.getElementById(str);
+			var color = plot(r-1,c);
+			d.style.background=color;
+
+		}
+		
+		if(search()==true)
+		{
+			document.getElementById("mask").style.display="display";
+		}
+
+	}
+
+
+
+</script>
+<center>
+		<div class="container">
+			<table>
+
+				<tr>
+					<td><div id="00" class="bulb" onclick="check(this)"></div></td>
+					<td><div id="01" class="bulb" onclick="check(this)"></div></td>
+					<td><div id="02" class="bulb" onclick="check(this)"></div></td>
+					<td><div id="03" class="bulb" onclick="check(this)"></div></td>
+					<td><div id="04" class="bulb" onclick="check(this)"></div></td>
+				</tr>
+<tr><td><div id="10" class="bulb" onclick="check(this)"></div></td>
+<td><div id="11" class="bulb" onclick="check(this)"></div></td>
+<td><div id="12" class="bulb" onclick="check(this)"></div></td>
+<td><div id="13" class="bulb" onclick="check(this)"></div></td>
+<td><div id="14" class="bulb" onclick="check(this)"></div></td>
+</tr>
+<tr><td><div id="20" class="bulb" onclick="check(this)"></div></td>
+<td><div id="21" class="bulb" onclick="check(this)"></div></td>
+<td><div id="22" class="bulb" onclick="check(this)"></div></td>
+<td><div id="23" class="bulb" onclick="check(this)"></div></td>
+<td><div id="24" class="bulb" onclick="check(this)"></div></td>
+</tr>
+<tr><td><div id="30" class="bulb" onclick="check(this)"></div></td>
+<td><div id="31" class="bulb" onclick="check(this)"></div></td>
+<td><div id="32" class="bulb" onclick="check(this)"></div></td>
+<td><div id="33" class="bulb" onclick="check(this)"></div></td>
+<td><div id="34" class="bulb" onclick="check(this)"></div></td>
+</tr>
+<tr><td><div id="40" class="bulb" onclick="check(this)"></div></td>
+<td><div id="41" class="bulb" onclick="check(this)"></div></td>
+<td><div id="42" class="bulb" onclick="check(this)"></div></td>
+<td><div id="43" class="bulb" onclick="check(this)"></div></td>
+<td><div id="44" class="bulb" onclick="check(this)"></div></td>
+</tr>
+
+	
+			</table>
+			</div>
+			</center>
+			<div class="result">
+			<p>Number of clicks <b id="numb">0</b></p>
+			</div>
+			<footer>
+				<h2>&copy;2014 A product from ramblers solutions</h2>
+			</footer>
+</body>
+</html>

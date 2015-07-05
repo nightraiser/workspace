@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light'em all</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+	@font-face {
+    font-family: mainfont;
+    src: url(circula-medium.otf);
+}
+	body
+	{
+		background: #2c3e50;
+		color: white;
+		font-family: mainfont;
+	}
+	h1
+	{
+		font-family: mainfont;
+	}
+	h2
+	{
+	font-weight: bold;
+	font-size: 50px;	
+	}
+	.yellow
+	{
+		color: yellow;
+
+	}
+	hr
+	{
+		border-color: white;
+
+	}
+	
+	</style>
+<script type="text/javascript">
+	function getset () {
+		var h = document.getElementById("heading");
+		h.style.fontSize=window.innerWidth/8+"px";
+		h.style.marginTop=window.innerHeight/15+"px";
+	}
+
+
+</script>
+</head>
+<body onload="getset();">
+
+<div class="row">
+<div class="col-md-12">
+<div class="container">
+<center>
+<h1 id="heading">Light'<span class="yellow">em </span>all</h1>
+
+</center>
+</div>
+</div>
+</div>
+<br><br><br>
+<div class="row">
+<div class="col-md-12">
+<div class="container">
+<center>
+	<hr><br>
+<a href="game.html" class="btn btn-success btn-lg"><h2>Go to Game</h2></a>
+<br>
+<br><br>
+<a href="instructions.html" class="btn btn-danger btn-lg"><h2>Instructions</h2></a>
+
+
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

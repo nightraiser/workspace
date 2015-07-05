@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/offcanvas/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+   <title>Exceller</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../css/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="css/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript">
+    window.onbeforeunload = function() {
+        alert("Dude, are you sure you want to leave? Think of the kittens!") ;
+        </script>
+    
+   
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+	<script>
+	function csvdone()
+	{
+		/*
+var csv = new ActiveXObject("scripting.FileSystemObject");
+var fLoc = csv.CreateTextFile(fileName);
+fLoc.WriteLine(csvData);
+fLoc.close();
+*/
+document.getElementById("data").innerHTML=document.getElementById("source").value;
+
+var list = document.getElementsByTagName("td");
+var csvData="data:text/csv;charset=utf-8,Date%2CClose price%2COpen price%2CHigh%2CLow%2CDifference%2CDFPD%0A";
+var i=16;
+var prev=parseFloat(0);
+while(i<list.length)
+
+{
+	
+	
+	if(i%8==0)
+	{
+
+			
+		if(i+12<list.length)
+		prev = list[i+12].innerHTML;
+		else
+			prev = parseFloat(0);
+		var dif = parseFloat(list[i+2].innerHTML)-parseFloat(list[i+3].innerHTML);
+		var day = (parseFloat(list[i+4].innerHTML)-prev);
+		csvData += list[i].innerHTML+"%2C"+list[i+4].innerHTML+"%2C"+list[i+1].innerHTML+"%2C"+list[i+2].innerHTML+"%2C"+list[i+3].innerHTML+"%2C"+dif+"%2C"+day+"%0A";
+		
+	}
+	i=i+8;
+}
+document.getElementById("down").setAttribute("href",csvData);
+
+}
+
+</script>
+</head>
+<BODY >
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          
+          
+          <a class="navbar-brand" href="index.php"><b class="logo">Exceller</b></a>
+        </div>
+        
+      </div>
+    </div><br>
+<div class="container">
+<Br><br>
+<div class="panel panel-primary">
+<div class="panel-heading"><b>Insert code here</b></div>
+    <div class="row">
+    <div class="col-md-12">
+    <br><center>
+<textarea id="source" cols="100" rows="20"></textarea></center>
+</div>
+</div>
+<br>
+<center>
+<a onclick="csvdone();" class="btn btn-success" id="down" href="#">Download</a><br><br>
+</center>
+<div class="panel-footer"> <center>  <p>Designed by <a href="#" download="MyFile.csv">Ramblers solutions</a> &copy; Anjani Software Technologies 2014</p>
+      </center></div>
+</div>
+<div  style="display:none;" id="data"></div>
+</div> 	
+
+</div>
+
+</BODY>
+</HTML>

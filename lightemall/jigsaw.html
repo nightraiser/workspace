@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+td
+{
+	border-radius:10px;
+}
+
+
+	</style>
+	<script type="text/javascript">
+
+	var clicks=0;
+columns1 = new Array(5);      
+columns2 = new Array(5);   
+columns3 = new Array(5);
+columns4 = new Array(5);
+columns5 = new Array(5);
+
+rows = new Array(5);
+rows[0] = columns1;
+rows[1] = columns2;
+rows[2] = columns3;
+rows[3] = columns4;
+rows[4] = columns5;
+var arr = []
+while(arr.length < 24){
+  var randomnumber=Math.floor(Math.random() * (24 - 1 + 1)) + 1;
+  var found=false;
+  for(var i=0;i<arr.length;i++){
+    if(arr[i]==randomnumber){found=true;break}
+  }
+  if(!found)arr[arr.length]=randomnumber;
+}
+var pos=0;
+
+for(var i=0;i<5;i++)
+		{
+			
+			for(var j=0;j<5;j++)
+			{
+					 rows[i][j]=arr[pos];
+					 pos++;
+			}
+		}
+		rows[4][4]=0;
+
+		function check(x)
+		{
+
+			var now = x.id;
+			var r = parseInt(x.id.charAt(0));
+			var c = parseInt(x.id.charAt(1));
+			if((r+1)<=4)
+			{
+			if(rows[r+1][c]==0)
+			{
+				var temp=rows[r][c];
+				rows[r][c]=rows[r+1][c];
+				rows[r+1][c]=temp;
+				console.log(rows[r][c]+","+r+","+c);
+				plot();
+				return;
+			}
+		}
+		if((r-1)>=0)
+		{
+			if(rows[r-1][c]==0)
+			{
+
+				var temp=rows[r][c];
+				rows[r][c]=rows[r-1][c];
+				rows[r-1][c]=temp;
+
+				plot();
+			}
+		}
+			if((c+1)<=4)
+			{
+			if(rows[r][c+1]==0)
+			{
+				var temp=rows[r][c];
+				rows[r][c]=rows[r][c+1];
+				rows[r][c+1]=temp;
+				plot();
+			}
+		}
+			if((c-1)>=0)
+			{
+			if(rows[r][c-1]==0)
+			{
+				var temp=rows[r][c];
+				rows[r][c]=rows[r][c-1];
+				rows[r][c-1]=temp;
+				plot();
+			}
+		}
+		
+
+			
+		}
+
+	function plot()
+	{
+		var table = document.getElementById("mytable");
+		table.style.marginTop=window.innerHeight/15+"px";
+		table.innerHTML="";
+		var n=0;
+		for(var i=0;i<5;i++)
+		{
+			var row = table.insertRow(i);
+			for(var j=0;j<5;j++)
+			{
+					 var cell1 = row.insertCell(j);
+					 cell1.innerHTML = rows[i][j];
+					 cell1.id = i+""+j;	
+					 cell1.setAttribute("onclick","check(this);");
+					 cell1.style.height=window.innerHeight/7+"px";
+			cell1.style.width=window.innerWidth/5+"px";
+					 if(rows[i][j]==0)
+					 {
+					 	cell1.style.background="#e74c3c";
+		cell1.style.borderColor="#2c3e50";
+		cell1.style.borderWidth="2px";
+		cell1.style.borderStyle="solid";
+		cell1.innerHTML = "";
+					 }
+			}
+		}
+
+		
+    
+	}
+
+
+	</script>
+	<style type="text/css">
+	body
+	{
+		background: #ecf0f1;
+	}
+	td
+	{
+		
+		background: #2c3e50;
+		color: white;
+		font-weight: bold;
+		font-size: 30px;
+		text-align: center;
+	}
+
+
+	</style>
+</head>
+<body onload="plot();">
+<table id = "mytable">
+	
+</table>
+</body>
+</html>
+	
